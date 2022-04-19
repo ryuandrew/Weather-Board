@@ -14,17 +14,19 @@ function searchHandler() {
     })
 }
 
-
 function weatherSearch(lat, lon) {
     //http://api.openweathermap.org/geo/1.0/reverse?lat={lat}&lon={lon}&limit={limit}&appid={API key}
     var url = "https://api.openweathermap.org/data/2.5/onecall?lat=" + lat + "&lon=" + lon + "&appid=" + apiKey  //reaplacing {lat} and {lon}. don't need limit bc it's optional
     fetch(url).then(function (response) {  //fetch returns blur
         return response.json()  //turn it into string
     }).then(function(data) {  //the data we want.  data=response.json()
-        console.log(data)
-        
+        console.log(data)        
     })
 }
+
+
+var cityHistory = $('#cityHistory')
+
 
 
 buttonEl.on("click", searchHandler)
