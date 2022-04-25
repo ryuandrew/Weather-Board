@@ -1,0 +1,4 @@
+#cityHistory {
+    display: flex;
+    flex-direction: column;
+}
