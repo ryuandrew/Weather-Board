@@ -11,9 +11,11 @@ function searchHistoryButton(){
     for(i = 0; i < searchHistory.length; i++){
         var button = $('<button>')
         button.text(searchHistory[i])
+        button.addClass('d-flex w-100 btn-light border p-2')
         cityHistory.append(button)
     }
 }
+// card bg-primary text-light m-2
 
 
 function searchHandler(event) {
@@ -57,14 +59,15 @@ function weatherSearch(lat, lon, city) {
         var uvIndex = $('<p>')
         var icon = $('<img>')
         cityName.text(city)
-        date.text(moment.unix(data.current.dt).format("DD/MM/YYYY"))
+        date.text(moment.unix(data.current.dt).format("MM/DD/YYYY"))
         temp.html("temp: " + data.current.temp.toFixed(0) + "&#176 F")
         humidity.text("humidity: " + data.current.humidity)
         uvIndex.text("UV Index: " + data.current.uvi)
         icon.attr("src", `http://openweathermap.org/img/wn/${data.current.weather[0].icon}@2x.png`)
         // append
         // icon.class()
-        currWeather.append(cityName, date, temp, humidity, uvIndex, icon)
+        currWeather.addClass('list-group-item list-group-item-action')
+        currWeather.append(cityName, icon, date, temp, humidity, uvIndex)
         fiveDay(data.daily)
     })
 }
@@ -77,19 +80,25 @@ function fiveDay(data) {
         var container = $('<div>')
         container.addClass('col-2')
         //city name, date, icon, temp, humidity, uv index
-        var date = $('<p>')
+        var date = $('<h5>')
         var temp = $('<p>')
         var humidity = $('<p>')
         var uvIndex = $('<p>')
         var icon = $('<img>')
-        date.text(moment.unix(data[i].dt).format("DD/MM/YYYY"))
+        date.text(moment.unix(data[i].dt).format("MM/DD/YYYY"))
         temp.html("tmp: " + data[i].temp.day.toFixed(0) + "&#176 F")
         humidity.text("humidity: " + data[i].humidity)
         uvIndex.text("UV Index: " + data[i].uvi)
         icon.attr("src", `http://openweathermap.org/img/wn/${data[i].weather[0].icon}@2x.png`)
         // append
         // icon.class()
-        container.append(date, temp, humidity, uvIndex, icon)
+        date.addClass('card-header text-center')
+        temp.addClass('card-text text-center')
+        humidity.addClass('card-text text-center')
+        uvIndex.addClass('card-text text-center')
+
+        container.addClass('card bg-primary text-light mx-auto') //m-2
+        container.append(date, icon, temp, humidity, uvIndex)
         fiveDayWeather.append(container)
     }
 }
