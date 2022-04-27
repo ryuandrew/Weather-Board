@@ -39,8 +39,8 @@ WHEN I click on a city in the search history
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://img.shields.io/badge/License-MIT-yellow.svg)
 
 ---
-## Screenshot
-![](Screen%20Shot%202022-04-21%20at%206.16.08%20PM.png)
+## Demo
+![](./Weather%20Board.gif)
 
 ---
 ### Github: https://github.com/ryuandrew/Weather-Board
