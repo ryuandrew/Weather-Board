@@ -80,7 +80,7 @@ function fiveDay(data) {
         var container = $('<div>')
         container.addClass('col-2')
         //city name, date, icon, temp, humidity, uv index
-        var date = $('<h5>')
+        var date = $('<p>')
         var temp = $('<p>')
         var humidity = $('<p>')
         var uvIndex = $('<p>')

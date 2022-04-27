@@ -2,3 +2,18 @@
     display: flex;
     flex-direction: column;
 }
+
+#fiveDay {
+    padding-top: 50px;
+}
+
+.card {
+    word-wrap: normal;
+    margin: auto;
+    padding: 0;
+}
+
+#currWeather {
+    border-style: none; 
+    text-align: center;
+}
