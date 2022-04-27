@@ -41,7 +41,7 @@ WHEN I click on a city in the search history
 ---
 ## Demo
 ![](./Weather%20Board.gif)
-
+ 
 ---
 ### Github: https://github.com/ryuandrew/Weather-Board
 

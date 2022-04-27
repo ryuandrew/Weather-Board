@@ -31,7 +31,7 @@ function searchHandler(event) {
     }
 
     // http://api.openweathermap.org/geo/1.0/direct?q={city name},{state code},{country code}&limit={limit}&appid={API key}
-    var url = "http://api.openweathermap.org/geo/1.0/direct?q=" + inputEl + "&appid=" + apiKey  //replacing {city name} and {api key}. don't need limit bc it's optional
+    var url = "https://api.openweathermap.org/geo/1.0/direct?q=" + inputEl + "&appid=" + apiKey  //replacing {city name} and {api key}. don't need limit bc it's optional
     fetch(url).then(function (response) {  //fetch returns blur
         return response.json()  //turn it into string
     }).then(function(data) {  //the data we want.  data=response.json()
